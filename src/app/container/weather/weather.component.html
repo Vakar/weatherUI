@@ -1,0 +1,19 @@
+<section class="weather" *ngIf="weather">
+  <div id="cityName">
+    <span>City: </span>{{ weather.cityName }}, {{ weather.country }}
+  </div>
+  <div id="humidity"><span>Humidity: </span> {{ weather.humidity }}%</div>
+  <div id="temperature">
+    <span>Temperature: </span> {{ weather.temperature }}℃
+  </div>
+  <div id="wind"><span>Wind: </span> {{ weather.wind }} m/s</div>
+  <div
+    class="weatherCondition"
+    *ngFor="let weatherCondition of weather.conditions"
+  >
+    <img
+      src="{{ weatherCondition.iconUrl }}"
+      alt="{{ weatherCondition.description }}"
+    />
+  </div>
+</section>

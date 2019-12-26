@@ -1,0 +1,28 @@
+<div class="search lighter">
+  <div class="autocomplete">
+    <input
+      type="text"
+      class="autocomplete"
+      autoComplete="off"
+      [(ngModel)]="inputText"
+      (keydown)="keyDown($event)"
+      appAutofocus
+    />
+    <div
+      id="autocomplete-list"
+      class="autocomplete-items"
+      *ngIf="isAutocompleteShown"
+    >
+      <div
+        class="itemList"
+        *ngFor="let city of cityList; let i = index"
+        (mouseenter)="onMouseOver(i)"
+        (click)="showWeather(city)"
+        [class.autocomplete-active]="i == cityListPointer"
+      >
+        {{ city.name }} , {{ city.country }}
+      </div>
+    </div>
+  </div>
+  <button type="submit" (click)="findCities()">Search</button>
+</div>
