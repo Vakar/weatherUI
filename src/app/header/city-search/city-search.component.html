@@ -6,6 +6,7 @@
       autoComplete="off"
       [(ngModel)]="inputText"
       (keydown)="keyDown($event)"
+      placeholder="Pleas input city name here"
       appAutofocus
     />
     <div
@@ -24,5 +25,7 @@
       </div>
     </div>
   </div>
-  <button type="submit" (click)="findCities()">Search</button>
+  <button type="submit" (click)="findCities()">
+    <i class="icon-search"></i>
+  </button>
 </div>
