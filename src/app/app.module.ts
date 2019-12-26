@@ -15,7 +15,6 @@ import { WeatherComponent } from "./container/weather/weather.component";
 import { MessageComponent } from "./container/message/message.component";
 import { DataService } from "./shared/services/data.service";
 import { FormsModule } from "@angular/forms";
-import { TemperatureConverterService } from "./shared/services/temperature.converter.service";
 import { AutofocusDirective } from "./autofocus.directive";
 
 @NgModule({
@@ -31,12 +30,7 @@ import { AutofocusDirective } from "./autofocus.directive";
     AutofocusDirective
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [
-    CityService,
-    DataService,
-    WeatherService,
-    TemperatureConverterService // todo am I really need tis import?
-  ],
+  providers: [CityService, DataService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
