@@ -61,7 +61,7 @@ export class CitySearchComponent implements OnInit {
     this.dataService.changeMessage(message);
   }
 
-  private showWeather(city: City) {
+  showWeather(city: City) {
     this.dataService.changeMessage(null);
     this.cityList = [];
     this.inputText = city.name;
