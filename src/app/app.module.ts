@@ -7,7 +7,6 @@ import { CityService } from "./shared/services/city.service";
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { HttpClientModule } from "@angular/common/http";
-import { SharedComponent } from "./shared/shared.component";
 import { WeatherService } from "./shared/services/weather.service";
 import { CopyrightComponent } from "./footer/copyright/copyright.component";
 import { CitySearchComponent } from "./header/city-search/city-search.component";
@@ -17,14 +16,13 @@ import { MessageComponent } from "./container/message/message.component";
 import { DataService } from "./shared/services/data.service";
 import { FormsModule } from "@angular/forms";
 import { TemperatureConverterService } from "./shared/services/temperature.converter.service";
-import { AutofocusDirective } from './autofocus.directive';
+import { AutofocusDirective } from "./autofocus.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    SharedComponent,
     CopyrightComponent,
     CitySearchComponent,
     ContainerComponent,
