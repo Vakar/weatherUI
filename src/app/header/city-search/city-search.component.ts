@@ -15,7 +15,7 @@ export class CitySearchComponent implements OnInit {
   inputText: string = "";
   cityList: City[] = [];
   isAutocompleteShown: boolean = false;
-  cityListPointer: number = 0; // todo from 0 to cityList.length
+  cityListPointer: number = 0;
 
   constructor(
     private cityService: CityService,
@@ -27,7 +27,6 @@ export class CitySearchComponent implements OnInit {
 
   findCities() {
     if (this.inputText) {
-      // todo maybe validate with angular forms is a better idea
       let cityName: string = this.inputText;
       let observableCityList: Observable<any> = this.cityService.getCityList(
         cityName
