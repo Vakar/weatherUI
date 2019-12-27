@@ -30,16 +30,17 @@ export class CitySearchComponent implements OnInit {
   findCities() {
     if (this.inputText) {
       let cityName: string = this.inputText;
-      let observableCityList: Observable<any> = this.cityService.getCityList(
-        cityName
+      let obsCityList: Observable<any> = this.cityService.getCityList(cityName);
+      obsCityList.subscribe(
+        value => {
+          this.cityList = value.map((city: any) =>
+            new City().deserialize(city)
+          );
+          this.cityList = this.cityList.slice(0, 7);
+          this.makeDecision(this.cityList);
+        },
+        error => console.error(error)
       );
-      observableCityList.subscribe(response => {
-        this.cityList = response.map((city: any) =>
-          new City().deserialize(city)
-        );
-        this.cityList = this.cityList.slice(0, 7);
-        this.makeDecision(this.cityList);
-      });
     } else {
       this.dataService.changeMessage("Please input city name!");
     }
@@ -66,13 +67,14 @@ export class CitySearchComponent implements OnInit {
     this.dataService.changeMessage(null);
     this.cityList = [];
     this.inputText = city.name;
-    let observableWeather: Observable<any> = this.weatherService.getWeather(
-      city.id
+    let obsWeather: Observable<any> = this.weatherService.getWeather(city.id);
+    obsWeather.subscribe(
+      value => {
+        let weather: Weather = new Weather().deserialize(value);
+        this.dataService.changeWeather(weather);
+      },
+      error => console.error(error)
     );
-    observableWeather.subscribe(response => {
-      let weather: Weather = new Weather().deserialize(response);
-      this.dataService.changeWeather(weather);
-    });
   }
 
   showAutocomplete() {
