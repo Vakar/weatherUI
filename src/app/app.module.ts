@@ -16,6 +16,7 @@ import { MessageComponent } from "./container/message/message.component";
 import { DataService } from "./shared/services/data.service";
 import { FormsModule } from "@angular/forms";
 import { AutofocusDirective } from "./autofocus.directive";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,13 @@ import { AutofocusDirective } from "./autofocus.directive";
     MessageComponent,
     AutofocusDirective
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    FontAwesomeModule
+  ],
   providers: [CityService, DataService, WeatherService],
   bootstrap: [AppComponent]
 })

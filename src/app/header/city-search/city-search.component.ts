@@ -5,6 +5,7 @@ import { DataService } from "src/app/shared/services/data.service";
 import { WeatherService } from "src/app/shared/services/weather.service";
 import { Observable } from "rxjs";
 import { Weather } from "src/app/shared/models/weather.model";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-city-search",
@@ -16,6 +17,7 @@ export class CitySearchComponent implements OnInit {
   cityList: City[] = [];
   isAutocompleteShown: boolean = false;
   cityListPointer: number = 0;
+  faSearch = faSearch;
 
   constructor(
     private cityService: CityService,
