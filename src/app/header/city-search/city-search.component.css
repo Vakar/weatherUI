@@ -1,15 +1,15 @@
 .search {
   display: table;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .autocomplete {
   display: inline-block;
+  min-width: 25vmax;
 }
 
 input {
   border: 1px solid transparent;
-  /* background-color: #d4d4d4; */
   padding: 0.7rem;
   color: #505050;
   background-color: #d4d4d4;
