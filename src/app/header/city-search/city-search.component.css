@@ -4,19 +4,15 @@
 }
 
 .autocomplete {
-  position: relative;
   display: inline-block;
-  width: 30rem;
 }
 
 input {
   border: 1px solid transparent;
-  background-color: #d4d4d4;
+  /* background-color: #d4d4d4; */
   padding: 0.7rem;
   color: #505050;
-  display: inline-block;
   background-color: #d4d4d4;
-  width: 100%;
 }
 
 button[type="submit"] {
@@ -33,7 +29,6 @@ button[type="submit"] {
   border-bottom: none;
   border-top: none;
   z-index: 99;
-
   top: 100%;
   left: 0;
   right: 0;
