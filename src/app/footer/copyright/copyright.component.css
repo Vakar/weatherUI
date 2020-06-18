@@ -1,4 +1,10 @@
 .copyright {
   display: table;
   margin: 0 auto;
+  color: #6c757d;
+}
+
+.copyright a {
+  color: #6c757d;
+  text-decoration: none;
 }
